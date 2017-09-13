@@ -33,14 +33,14 @@ stack::~stack() {
 void stack::push(const int &din) {
 	for (int i=0; i<=(arraysize-1); i++) {
 		int temp = myarray[i];
-		myarray[i+1] = temp;
+		myarray[i] = temp;
 	}
-	myarray[0] = din;
+	myarray[arraysize] = din;
 	arraysize++;
 }
 
 void stack::print() {
-	for (int i=0; i<2; i++) {
+	for (int i=0; i<arraysize; i++) {
 		cout << myarray[i] << " - " << i << "\n";
 	}
 }
