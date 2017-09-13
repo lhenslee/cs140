@@ -20,9 +20,9 @@ class stack {
 };
 
 stack::stack() {
-	myarray = NULL;
 	Nmax = 10;
 	arraysize = 0;
+	myarray = new int[Nmax];
 }
 
 stack::~stack() {
@@ -31,15 +31,12 @@ stack::~stack() {
 }
 
 void stack::push(const int &din) {
-	arraysize++;
-	myarray = new int[0];
 	for (int i=0; i<=(arraysize-1); i++) {
-		cout << myarray[i] << " - " << i << "\n";
 		int temp = myarray[i];
-		myarray = new int[i+1];
 		myarray[i+1] = temp;
 	}
 	myarray[0] = din;
+	arraysize++;
 }
 
 void stack::print() {
@@ -52,6 +49,8 @@ int main (int argc, char** argv) {
 	stack s;
 	s.push(5);
 	s.push(6);
-	//s.print();
+	s.print();
 }
+=======
+>>>>>>> fa13e6fa927649b4d0fa609ac95b9c1ceb0a9f23
 
